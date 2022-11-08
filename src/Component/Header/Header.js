@@ -6,7 +6,7 @@ const Header = () => {
         <div>
             <div className="navbar bg-green-200">
                 <div className='navbar-start'>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <a className="btn btn-ghost normal-case text-xl">MOUsumi kitchen</a>
                 </div>
                 <div className="navbar-end">
                     {/* mobile */}
