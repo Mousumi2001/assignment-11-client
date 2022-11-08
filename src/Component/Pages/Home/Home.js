@@ -5,10 +5,11 @@ import Banner from './Banner';
 import Service from './Service';
 
 const Home = () => {
+
     const [cards, setCards] = useState({})
     console.log(cards)
     useEffect(() => {
-        fetch('service.json')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => setCards(data))
     }, [])
@@ -18,9 +19,9 @@ const Home = () => {
             <h1>this is home</h1>
             <div>
                 <div className='grid grid-cols-3 gap-7'>
-                    {
+                    {/* {
                         cards.map(card => <Service key={card._id} card={card}></Service>)
-                    }
+                    } */}
 
                 </div>
                 <Link to='/allservice'>

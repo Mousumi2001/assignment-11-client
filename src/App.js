@@ -7,6 +7,7 @@ import Blog from './Component/Blog/Blog';
 import Login from './Component/Pages/Login/Login';
 import Register from './Component/Pages/Register/Register';
 import AllService from './Component/Pages/AllService/AllService';
+import DetailsCard from './Component/Pages/DetailsCard/DetailsCard';
 
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -36,7 +37,14 @@ function App() {
         },
         {
           path: '/allservice',
-          element: <AllService></AllService>
+          element: <AllService></AllService>,
+          loader: () => fetch('http://localhost:5000/servicesAll')
+        },
+        //try this
+        {
+          path: '/allservice/:id',
+          element: <DetailsCard></DetailsCard>,
+          loader: ({ params }) => fetch(`http://localhost:5000/servicesAll/${params.id}`)
         }
       ]
     }
