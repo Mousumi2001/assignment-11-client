@@ -1,10 +1,14 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, googleSign } = useContext(AuthContext);
+
+    const provider = new GoogleAuthProvider();
+
 
     const handleRegister = event => {
         event.preventDefault()
@@ -15,6 +19,16 @@ const Register = () => {
         console.log(name, email, password)
 
         createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error => console.error(error))
+    }
+
+
+    const handleGoogle = () => {
+        googleSign(provider)
             .then(result => {
                 const user = result.user;
                 console.log(user)
@@ -53,6 +67,8 @@ const Register = () => {
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
+                            <br />
+                            <button onClick={handleGoogle} className="btn btn-primary">Register With Google</button>
                         </div>
                     </form>
                 </div>
