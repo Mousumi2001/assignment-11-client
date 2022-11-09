@@ -38,13 +38,13 @@ function App() {
         {
           path: '/allservice',
           element: <AllService></AllService>,
-          loader: () => fetch('http://localhost:5000/servicesAll')
+          loader: () => fetch('http://localhost:5000/allservices')
         },
         //try this
         {
           path: '/allservice/:id',
           element: <DetailsCard></DetailsCard>,
-          loader: ({ params }) => fetch(`http://localhost:5000/servicesAll/${params.id}`)
+          loader: ({ params }) => fetch(`http://localhost:5000/allservices/${params.id}`)
         }
       ]
     }
