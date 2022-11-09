@@ -38,13 +38,13 @@ function App() {
         {
           path: '/allservice',
           element: <AllService></AllService>,
-          loader: () => fetch('http://localhost:5000/allservices')
+          loader: () => fetch('https://assignment-11-server-inky.vercel.app/allservices')
         },
         //try this
         {
           path: '/allservice/:id',
           element: <DetailsCard></DetailsCard>,
-          loader: ({ params }) => fetch(`http://localhost:5000/allservices/${params.id}`)
+          loader: ({ params }) => fetch(`https://assignment-11-server-inky.vercel.app/allservices/${params.id}`)
         }
       ]
     }
