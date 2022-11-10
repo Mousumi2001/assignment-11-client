@@ -1,12 +1,17 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 
 const Login = () => {
     const { signIn, googleSign } = useContext(AuthContext);
-    const provider = new GoogleAuthProvider
+    const provider = new GoogleAuthProvider();
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleSignIn = event => {
         event.prevantDefault()
@@ -19,6 +24,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                navigate(from, { replace: true })
             })
             .catch(error => console.error(error))
 
@@ -34,26 +40,22 @@ const Login = () => {
     }
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-white">
             <div className="hero-content flex-col ">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Please Login now!</h1>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-full max-w-sm bg-base-100">
                     <form onSubmit={handleSignIn} className="card-body">
                         <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <input type="text" name='email' placeholder="email" className="input input-bordered" />
+
+                            <input type="text" name='email' placeholder="email" className="border-b-4 border-pink-600 shadow-lg mt-5" />
                         </div>
                         <div className="form-control">
+
+                            <input type="password" name='password' placeholder="password" className=" border-b-4 border-pink-600 shadow-lg mt-5" />
                             <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" />
-                            <label className="label">
-                                <p>Create a new accoutn? <Link to='/register'>Register</Link></p>
+                                <p>Create a new accoutn? <Link className='text-xl font-bold text-pink-500' to='/register'>Register</Link></p>
                             </label>
                         </div>
                         <div className="form-control mt-6">

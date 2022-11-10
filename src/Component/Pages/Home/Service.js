@@ -12,7 +12,7 @@ const Service = ({ card }) => {
                 <p>{details}</p>
                 <div className="card-actions justify-end">
                     <Link to={`/allservice/${_id}`}>
-                        <button className="btn bg-pink-700 border-none">Details</button>
+                        <button className="btn bg-pink-700 border-none">View Details</button>
                     </Link>
                 </div>
             </div>

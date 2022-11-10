@@ -13,7 +13,7 @@ const All = ({ all }) => {
                     <p>{details}</p>
                     <div className="card-actions justify-end">
                         <Link to={`/allservice/${_id}`}>
-                            <button className="btn btn-primary">Go Details</button>
+                            <button className="btn btn-primary">View Details</button>
                         </Link>
                     </div>
                 </div>

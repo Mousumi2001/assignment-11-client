@@ -8,6 +8,8 @@ import Login from './Component/Pages/Login/Login';
 import Register from './Component/Pages/Register/Register';
 import AllService from './Component/Pages/AllService/AllService';
 import DetailsCard from './Component/Pages/DetailsCard/DetailsCard';
+import AddService from './Component/Pages/AddService/AddService';
+import PrivateRouter from './PrivateRouter/PrivateRouter';
 
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -45,6 +47,10 @@ function App() {
           path: '/allservice/:id',
           element: <DetailsCard></DetailsCard>,
           loader: ({ params }) => fetch(`https://assignment-11-server-inky.vercel.app/allservices/${params.id}`)
+        },
+        {
+          path: '/addService',
+          element: <PrivateRouter><AddService></AddService></PrivateRouter>
         }
       ]
     }
