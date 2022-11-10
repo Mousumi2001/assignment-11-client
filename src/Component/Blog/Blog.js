@@ -6,7 +6,7 @@ const Blog = () => {
             <h1 className='text-3xl font-bold text-pink-700 '>Questions and Answer:-</h1>
             <div className='grid justify-center lg:ml-10 my-8'>
                 <h1 className='bg-white rounded-full text-xl p-4 w-2/4 font-bold my-3'> <span className='text-blue-500 font-bold'>1. </span>Difference between SQL and NoSQL ?</h1>
-                <p className='text-md bg-white rounded-full w-2/3 p-5 '><span className='font-bold'>Ans:- </span>SQL is the most common language for extracting and organizing data that is stored in a relational database . A database is a table that consists of rows and columns. SQL is the language of databases.NoSQL is an approach to database management that can accommodate a wide variety of data models, including key-value, document, columnar and graph formats . </p>
+                <p className='text-md bg-white rounded-full w-2/3 p-5 '><span className='font-bold'>Ans:- </span>SQL is the most common language for extracting and organizing data in that is stored in a relational database . A database is a table that consists of rows and columns. SQL is the language of databases.NoSQL is an approach to database management that can accommodate a wide variety of data models, including key-value, document, columnar and graph formats . </p>
             </div>
             <div className='grid justify-center lg:ml-10 my-8'>
                 <h1 className='bg-white rounded-full text-xl p-4 w-2/4 font-bold my-3'>
