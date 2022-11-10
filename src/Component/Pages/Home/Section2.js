@@ -2,14 +2,32 @@ import React from 'react';
 
 const Section2 = () => {
     return (
-        <div className='grid grid-cols-3'>
-            <div className="mask mask-star w-60 h-60 bg-pink-600 m-10">
+        <div className='flex justify-around mb-16 bg-orange-200'>
+            <div className="overflow-x-auto">
+                <table className="table w-2/4 my-20">
+                    <thead >
+                        <tr>
+                            <th className='px-40 text-xl font-bold'>Some Charecteristics of food</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td className='font-bold text-orange-600'>get testy and healthy food</td>
+                        </tr>
+                        <tr>
+                            <td className='font-bold text-orange-600'>fresh food</td>
+                        </tr>
+                        <tr>
+                            <td className='font-bold text-orange-600'>they are foods rich in protein and minerals.
 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className='font-bold text-orange-600'>It mainly gives us energy</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div className="mask mask-decagon w-60 h-60 bg-pink-600 m-10">
-                <h1 className='text-white font-bold text-2xl mt-10'> FOOD LOVERS</h1>
-            </div>
-            <div className="mask mask-star w-60 h-60 bg-pink-600 m-10"></div>
         </div>
     );
 };
