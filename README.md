@@ -2,12 +2,14 @@
 --FOOD Lover
 
 ## live website link
---
+--https://assignment-11-39f3a.web.app
 
 ### project details 
 o. it is a food review  website 
-o. make some food service card in this website
-o. 
+o. make some food service card
+o. anybody can post new service and review
+o. this website create by react-router-dom, firebase, css component diasyUI,   mongodb    database and etc.
+o. this website also have blog page ,logIn ,logOut ,Register page.
 
 
 
