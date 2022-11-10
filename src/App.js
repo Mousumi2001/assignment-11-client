@@ -10,6 +10,7 @@ import AllService from './Component/Pages/AllService/AllService';
 import DetailsCard from './Component/Pages/DetailsCard/DetailsCard';
 import AddService from './Component/Pages/AddService/AddService';
 import PrivateRouter from './PrivateRouter/PrivateRouter';
+import MyReview from './Component/Pages/MyReview/MyReview';
 
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -51,6 +52,10 @@ function App() {
         {
           path: '/addService',
           element: <PrivateRouter><AddService></AddService></PrivateRouter>
+        },
+        {
+          path: '/myreview',
+          element: <PrivateRouter><MyReview></MyReview></PrivateRouter>
         }
       ]
     }

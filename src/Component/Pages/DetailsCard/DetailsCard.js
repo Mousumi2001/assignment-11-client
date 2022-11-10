@@ -9,25 +9,14 @@ const DetailsCard = () => {
     const { pic, name, price, details, _id, rating } = useLoaderData();
     const { user } = useContext(AuthContext);
 
+    const handleAddReview = event => {
+        event.preventDefault()
+        const reviewname = event.target.reviewname.value;
+        const text = event.target.text.value;
+        const email = user?.email || 'unregisterd';
 
-    const handleReview = event => {
-        event.preventDefault();
-        const form = event.target;
-        const reviewerName = form.name.value;
-        const email = user?.email || 'unregsiterd';
-        // const photo = user?.img || <FaUser></FaUser>;
-        const text = form.text.value;
-        console.log(name, email, text)
-
-        const review = {
-            // review: _id,
-            // price,
-            reviewerName,
-            // email,
-
-            text
-
-        }
+        const review = { name, reviewname, text, _id, email, pic };
+        console.log(review);
 
         fetch('https://assignment-11-server-inky.vercel.app/reviews', {
             method: 'POST',
@@ -37,16 +26,8 @@ const DetailsCard = () => {
             body: JSON.stringify(review)
         })
             .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.acknowledge) {
-                    alert('Order placed successfully')
-                    form.reset();
-                }
-            })
-            .catch(error => console.error(error))
+            .then(data => console.log(data))
     }
-
 
 
     return (
@@ -68,22 +49,14 @@ const DetailsCard = () => {
 
             {/* create add review form */}
             <div className='m-10'>
+                <h1 className='text-2xl font-bold'>ADD REVIEW</h1>
+                <form onSubmit={handleAddReview} className='border-r-4 border-blue-300 border-l-4 border-blue-200 lg:mx-40 lg:py-20'>
+                    <input type='text' className='w-2/4 text-xl p-3 rounded-xl my-2' name='reviewname' placeholder='reviewname' />
+                    <br />
+                    <input type='text' className='w-2/4 text-xl p-3 rounded-xl my-2' name='text' placeholder='text' />
+                    <br />
+                    <button type='submit' className='bg-pink-600 font-bold text-white p-3 rounded-xl'>Add Review</button>
 
-                <form onSubmit={handleReview} className='border-r-4 border-blue-300 border-l-4 border-blue-200 lg:mx-40 lg:py-20'>
-                    <input name='reviewerName' type="text" placeholder="name" className="input input-bordered  w-1/2" />
-                    <br />
-                    <br />
-                    <input name='email' type="text" placeholder="email" className="input input-bordered  w-1/2" />
-                    <br />
-                    <br />
-                    <input name='photo' type="photo" placeholder="photo" className="input input-bordered  w-1/2" />
-                    <br />
-                    <br />
-                    <textarea name='text' className="textarea textarea-error w-1/2" placeholder="Bio" required></textarea>
-                    <br />
-                    <br />
-                    {/* <input type='submit' placeholder='Submit' /> */}
-                    <input type='submit' className="btn bg-pink-600" value='Add Review' />
                 </form>
 
 

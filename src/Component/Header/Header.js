@@ -31,7 +31,7 @@ const Header = () => {
                                 user?.email ?
                                     <>
                                         <li><button onClick={handleSignOut}>LogOut</button></li>
-                                        <li><Link to='/'>My Review</Link></li>
+                                        <li><Link to='/myreview'>My Review</Link></li>
                                         <li><Link to='/addService'>Add Service</Link></li>
                                     </>
                                     :
@@ -58,7 +58,7 @@ const Header = () => {
                             user?.email ?
                                 <>
                                     <li className='text-xl font-bold text-pink-700'><button onClick={handleSignOut}>LogOut</button></li>
-                                    <li className='text-xl font-bold text-pink-700'><Link to='/'>My Review</Link></li>
+                                    <li className='text-xl font-bold text-pink-700'><Link to='/myreview'>My Review</Link></li>
                                     <li className='text-xl font-bold text-pink-700'><Link to='/addService'>Add Service</Link></li>
                                 </>
                                 :
