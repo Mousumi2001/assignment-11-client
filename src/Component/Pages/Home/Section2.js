@@ -7,7 +7,7 @@ const Section2 = () => {
                 <table className="table w-2/4 my-20">
                     <thead >
                         <tr>
-                            <th className='px-40 text-xl font-bold'>Some Charecteristics of food</th>
+                            <th className='lg:px-40 text-xl font-bold'>Some Charecteristics of food</th>
                         </tr>
                     </thead>
                     <tbody>

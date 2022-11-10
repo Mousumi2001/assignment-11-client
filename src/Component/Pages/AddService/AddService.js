@@ -47,7 +47,7 @@ const AddService = () => {
                 <br />
                 <input className='w-2/3 p-3 m-2 rounded-md font-bold text-pink-600' type='text' placeholder='details' name='details' />
                 <br />
-                <input className='w-2/3 p-3 m-2 rounded-md font-bold text-pink-600' type='URL' src='' name='pic' placeholder='img' />
+                <input className='w-2/3 p-3 m-2 rounded-md font-bold text-pink-600' type='URL' src='' name='pic' placeholder='img url' />
                 <br />
 
                 <button className='btn bg-pink-600' type='submit'>Add new Service</button>

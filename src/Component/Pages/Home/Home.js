@@ -17,6 +17,14 @@ const Home = () => {
     }, [])
     return (
         <div>
+
+            {/* section 1 */}
+            <div>
+                <Banner></Banner>
+            </div>
+
+
+            {/* section 2 */}
             <div className='my-14'>
                 <div className='grid lg:grid-cols-3 gap-7'>
                     {
@@ -28,8 +36,13 @@ const Home = () => {
                     <button className="btn  bg-pink-700 font-bold m-5">See All</button>
                 </Link>
             </div>
-            <Banner></Banner>
+
+
+
+            {/* section 3 */}
             <Section1></Section1>
+
+            {/* section 4 */}
             <Section2></Section2>
 
 

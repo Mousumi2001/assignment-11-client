@@ -1,15 +1,19 @@
 import React from 'react';
 
-const Reviews = () => {
-
+const Reviews = ({ all }) => {
+    const { name, foodName, text, pic } = all;
     return (
         <div>
-            <form>
-                <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
-                <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
-                <textarea className="textarea textarea-warning" placeholder="Bio"></textarea>
-                <input type='submit'> Submit</input>
-            </form>
+            <div className="card card-side bg-base-100 shadow-xl">
+                <figure><img src={pic} alt="Movie" /></figure>
+                <div className="card-body">
+                    <h2 className="card-title">{name}</h2>
+                    <p>{text}</p>
+                    <div className="card-actions justify-end">
+                    </div>
+                </div>
+            </div>
+
         </div>
     );
 };
